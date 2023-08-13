@@ -1,0 +1,19 @@
+# Env
+env.prod
+
+# Outputs
+bin
+packaged-*.yaml
+cloudformation-meta-dev.json
+
+# Dependencies
+vendor
+
+# Misc
+.DS_STORE
+.idea/
+/hello-world/go.mod
+/hello-world/go.mod/*
+*.sum
+/.aws-sam/
+/samconfig.toml
