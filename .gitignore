@@ -2,7 +2,7 @@
 env.prod
 
 # Outputs
-bin
+user/bin
 packaged-*.yaml
 cloudformation-meta-dev.json
 
