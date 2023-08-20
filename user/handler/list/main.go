@@ -21,7 +21,7 @@ type User struct {
 
 func handler(ctx context.Context, req events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
 	seed := time.Now().UTC().UnixNano()
-	nameGenerator := fmt.Sprintf("Random: %s", namegenerator.NewNameGenerator(seed).Generate())
+	nameGenerator := fmt.Sprintf("Random-> %s", namegenerator.NewNameGenerator(seed).Generate())
 
 	return api.APIResponse(200, User{time.Now().Unix(), nameGenerator})
 }
