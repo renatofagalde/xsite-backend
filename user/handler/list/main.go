@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
 	"github.com/goombaio/namegenerator"
@@ -20,7 +21,7 @@ type User struct {
 
 func handler(ctx context.Context, req events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
 	seed := time.Now().UTC().UnixNano()
-	nameGenerator := namegenerator.NewNameGenerator(seed)
+	nameGenerator := fmt.Sprintf("Random: %s", namegenerator.NewNameGenerator(seed).Generate())
 
-	return api.APIResponse(200, User{time.Now().Unix(), nameGenerator.Generate()})
+	return api.APIResponse(200, User{time.Now().Unix(), nameGenerator})
 }
