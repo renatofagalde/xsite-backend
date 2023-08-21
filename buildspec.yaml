@@ -41,7 +41,8 @@ phases:
 
       # Run all tests included with our application
 #      - go test ./...
-      - echo "commands OK"
+      - go mod tidy
+      - echo "go mod tidy -> OK"
 
   build:
     commands:
